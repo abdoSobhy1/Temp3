@@ -57,6 +57,7 @@ header {
     background-color: white;
     box-shadow: 0 0 10px #ddd;
     position: relative;
+    z-index: 10;
 }
 
 header .container {
@@ -124,12 +125,14 @@ header .main-nav > li > a::before {
     transition: 0.3s;
 }
 
-header .main-nav > li > a:hover {
+header .main-nav > li > a:hover,
+header .main-nav > li > a.is-active {
     color: var(--main-color);
     background-color: #fafafa;
 }
 
-header .main-nav > li > a:hover::before {
+header .main-nav > li > a:hover::before,
+header .main-nav > li > a.is-active::before {
     left: 0;
 }
 
@@ -140,28 +143,75 @@ header .mega-menu {
     padding: 30px;
     background-color: white;
     border-bottom: 3px solid var(--main-color);
-    z-index: 100;
-    display: flex;
+    opacity: 0;
+    display: none;
     gap: 40px;
     top: calc(50px + 100%);
     transition: 0.3s;
 }
 
+@media (max-width:767px) {
+    header .mega-menu {
+        flex-direction: column;
+        gap: 0;
+        padding: 5px;
+    }
+}
+
+header .mega-menu.is-enabled {
+    display: flex;
+}
+
+header .mega-menu.is-active {
+    opacity: 1;
+    z-index: 100;
+    top: calc(100% - 1px);
+}
 
 header .mega-menu .image img {
     max-width: 100%;
 }
 
-header .mega-menu .links {
+@media (max-width:991px) {
+    .mega-menu .image {
+        display: none;
+    }
+}
 
+header .mega-menu .links {
+    min-width: 250px;
+    flex: 1;
 }
 
 header .mega-menu .links li {
+    position: relative;
+}
 
+header .mega-menu .links li:not(:last-child) {
+    border-bottom: 1px solid #e9e9e6;
+}
+
+
+@media (max-width:767px) {
+    header .mega-menu:first-of-type .links li:last-child {
+    border-bottom: 1px solid #e9e9e6;
+    }
 }
 
 header .mega-menu .links li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 100%;
+    background-color: #fafafa;
+    z-index: -1;
+    transition: 0.3s;
+}
 
+header .mega-menu .links li:hover::before {
+    width: 100%;
 }
 
 header .mega-menu .links li a {
@@ -173,7 +223,14 @@ header .mega-menu .links li a {
 }
 
 header .mega-menu .links li a i {
+    margin-right: 10px; 
+}
 
+.overlay.is-active {
+    position: fixed;
+    width:100%;
+    height: 100%;
+    z-index: 4;
 }
 
 .landing {
