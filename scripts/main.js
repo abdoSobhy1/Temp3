@@ -17,10 +17,11 @@ menu.onclick = function(){
         visible = false
     }
 }
+
 overlay.onclick = function(){
-    links.classList.toggle('is-active')
-    setTimeout(() => {links.classList.toggle('is-enabled')}, 300)
-    menu.classList.toggle('is-active')
-    overlay.classList.toggle('is-active')
+    links.classList.remove('is-active')
+    setTimeout(() => {links.classList.remove('is-enabled')}, 300)
+    menu.classList.remove('is-active')
+    overlay.classList.remove('is-active')
     visible = false
-}
+}   
