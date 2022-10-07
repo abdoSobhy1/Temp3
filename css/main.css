@@ -705,7 +705,7 @@ header .mega-menu .links li a i {
     gap: 70px 40px;
 }
 
-@media (min-width:320px) {
+@media (max-width:320px) {
     .testimonials .container {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
@@ -734,6 +734,20 @@ header .mega-menu .links li a i {
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 70%;
+}
+
+@media (max-width:768px) {
+    .testimonials .box {
+        text-align: center;
+    }
+    .testimonials .box img {
+        right: 50%;
+        transform: translateX(50%);
+    }
+    .testimonials .box h3 {
+    max-width: fit-content;
+    margin: 40px auto 10px;
+    }
 }
 
 .testimonials .box .title {
