@@ -596,7 +596,7 @@ header .mega-menu .links li a i {
 }
 
 .features .box:hover .img-holder::after {
-    border-width: 150px 500px 150px 0;
+    border-width: 150px 700px 150px 0;
 }
 
 .features .box .img-holder img {
@@ -818,6 +818,8 @@ header .mega-menu .links li a i {
 
 .team .box .data img {
     width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    aspect-ratio: 1/1;
     border-radius: 10px;
     transition: 0.3s;
     object-fit: cover;
