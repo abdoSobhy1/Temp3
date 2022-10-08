@@ -901,6 +901,7 @@ header .mega-menu .links li a i {
     }
     .team .box .data img {
         width: 100%;
+        border-radius: 10px 10px 0 0;
     }
     .team .box .info h3 {
         margin-top: 0;
