@@ -1075,6 +1075,7 @@ header .mega-menu .links li a i {
     height: 100%;
     position: absolute;
     left: 0;
+    transition: 1s;
 }
 
 .work-steps {
