@@ -504,6 +504,13 @@ header .mega-menu .links li a i {
     gap: 40px;
 }
 
+@media (max-width:320px) {
+    .gallery .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+
 .gallery .box {
     padding: 15px;
     background-color: white;
@@ -564,6 +571,12 @@ header .mega-menu .links li a i {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
+}
+
+@media (max-width:320px) {
+    .features .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }
 
 .features .box {
@@ -780,6 +793,12 @@ header .mega-menu .links li a i {
     gap: 40px;
 }
 
+@media (max-width:320px) {
+    .team .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
 .team .box {
     position: relative;
 }
@@ -920,6 +939,12 @@ header .mega-menu .links li a i {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
+}
+
+@media (max-width:320px) {
+    .services .container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 }
 
 .services .box {
@@ -1133,4 +1158,139 @@ header .mega-menu .links li a i {
     .work-steps .info .box img {
         margin: 0 0 40px;
     }
+}
+
+.events {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.events .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.events img {
+    max-width: 450px;
+}
+
+@media (max-width:991px) {
+    .events img {
+        display: none;
+    }
+}
+
+.events .info {
+    flex: 1;
+    text-align: center;
+}
+
+.events .time {
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.events .time .unit {
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.events .time .unit span:first-of-type {
+    color: var(--main-color);
+    font-size: 35px;
+    padding: 15px;
+    display: block;
+    font-weight: bold;
+}
+
+.events .time .unit span:last-of-type {
+    color: #777;
+    padding: 5px 10px;
+    display: block;
+    border-top: 1px solid #d4d4d4;
+    transition: 0.3s;
+}
+
+.events .time .unit:hover,
+.events .time .unit:hover span {
+    border-color: var(--main-color);
+}
+
+.events .title {
+    margin: 40px 0 0;
+    font-size: 30px;
+}
+
+.events .description {
+    margin-top: 20px;
+    line-height: 1.7;
+    font-size: 19px;
+    color: #777;
+}
+
+.events .subscribe {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.events .subscribe form {
+    width: 600px;
+    margin: 20px auto;
+    padding: 30px 40px;
+    background-color: #f6f5f5;
+    display: flex;
+    gap: 20px;
+    border-radius: 20px;
+}
+
+@media (max-width:767px) {
+    .events .subscribe form {
+        max-width: 100%;
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+}
+
+.events .subscribe input[type="email"] {
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    flex: 1;
+    caret-color: var(--main-color);
+}
+
+.events .subscribe input[type="email"]:focus {
+    outline: none;
+}
+
+.events .subscribe input[type="email"]::placeholder {
+    transition: 0.3s;
+}
+
+.events .subscribe input[type="email"]:focus::placeholder {
+    opacity: 0;
+}
+
+.events .subscribe input[type="submit"] {
+    border: none;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.events .subscribe input[type="submit"]:hover {
+    background-color: var(--main-color-alt);
 }
