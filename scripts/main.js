@@ -26,6 +26,36 @@ overlay.onclick = function(){
     visible = false
 }
 
+document.querySelectorAll('.mega-menu ul li').forEach(item => {
+  item.addEventListener('click', event => {
+    links.classList.remove('is-active')
+    setTimeout(() => {links.classList.remove('is-enabled')}, 300)
+    menu.classList.remove('is-active')
+    overlay.classList.remove('is-active')
+    visible = false
+  })
+})
+
+window.addEventListener('resize', function(eqSize){
+  if (window.innerWidth>991){
+    var rightHeight = document.querySelector('.preview img').clientHeight;
+    var leftHeight = document.querySelector('.list').clientHeight;
+    document.querySelector('.list').style.maxHeight=rightHeight+66.4+'px';
+  } else {
+    document.querySelector('.list').style.maxHeight=300+'px';
+  }
+});
+
+window.onload = function(eqSize){
+  if (window.innerWidth>991){
+    var rightHeight = document.querySelector('.preview img').clientHeight;
+    var leftHeight = document.querySelector('.list').clientHeight;
+    document.querySelector('.list').style.maxHeight=rightHeight+66.4+'px';
+  } else {
+    document.querySelector('.list').style.maxHeight=200+'px';
+  }
+}
+
 let countDownDate = new Date("june 2, 2024 0:0:0").getTime();
 // console.log(countDownDate);
 
