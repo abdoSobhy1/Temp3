@@ -1295,3 +1295,146 @@ header .mega-menu .links li a i {
 .events .subscribe input[type="submit"]:hover {
     background-color: var(--main-color-alt);
 }
+
+.pricing {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #ececec;
+    position: relative;
+}
+
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pricing .box {
+    background-color: white;
+    border-radius: 6px;
+    position: relative;
+    transition: 0.3s;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0 , 0.13), 0 2px 4px 0 rgba(0, 0, 0 , 0.12);
+}
+
+.pricing .box::before,
+.pricing .box::after {
+    content: '';
+    height: 50%;
+    width: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.pricing .box::before {
+    top: 0;
+    left: 0;
+}
+
+.pricing .box::after {
+    right: 0;
+    bottom: 0;
+}
+
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+    width: 100%;
+}
+
+@media (min-width:1200px) {
+    .pricing .box.popular {
+        top: -20px;
+    }
+}
+
+.pricing .box.popular .label {
+    position: absolute;
+    writing-mode: vertical-rl;
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 10px 35px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    right: 20px;
+    width: 40px;
+}
+
+.pricing .box.popular .label::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: 20px solid transparent;
+    border-bottom-color: white;
+    transition: 0.3s;
+}
+
+.pricing .box:hover .label::before {
+    border-bottom-color: #f6f6f6;
+}
+
+.pricing .box .title {
+    font-weight: bold;
+    margin: 30px 0;
+    font-size: 25px;
+}
+
+.pricing .box img {
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.pricing .box .price {
+    margin-bottom: 20px;
+}
+
+.pricing .box .price .amount {
+    margin-bottom: 5px;
+    display: block;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.pricing .box .price .time {
+    color: #777;
+}
+
+.pricing .box ul {
+    text-align: left;
+}
+
+.pricing .box ul li {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.pricing .box ul li::before {
+    content: '\f00c';
+    font-family: 'font awesome 6 free';
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+
+.pricing .box a {
+    display: block;
+    width: fit-content;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    margin: 30px auto 40px;
+    padding: 15px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.pricing .box a:hover {
+    background-color: var(--main-color-alt);
+    border-color: var(--main-color-alt);
+    color: white;
+}
