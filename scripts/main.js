@@ -111,12 +111,12 @@ if (window.scrollY >= section.offsetTop - 500) {
     });
 }
 // Stats Increase Number
-// if (window.scrollY >= statsSection.offsetTop - 800) {
-//     if (!started) {
-//     nums.forEach((num) => startCount(num));
-//     }
-//     started = true;
-// }
+if (window.scrollY >= statsSection.offsetTop - 800) {
+    if (!started) {
+    nums.forEach((num) => startCount(num));
+    }
+    started = true;
+}
 };
 
 function startCount(el) {
