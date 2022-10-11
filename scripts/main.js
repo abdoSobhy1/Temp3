@@ -1,7 +1,27 @@
 const menu = document.querySelector('.other-links-toggle');
 const links = document.querySelector('.mega-menu');
+const mainMenutoggle = document.querySelector('.hamburger');
+const mainMenu = document.querySelector('.main-nav');
 const overlay = document.querySelector('.overlay');
 let visible = false;
+let mainV = false
+
+mainMenutoggle.onclick = function(){
+  mainMenutoggle.classList.toggle('is-active')
+  if (!mainV) {
+    mainMenu.classList.add('is-enabled')
+    overlay.classList.add('is-active')
+    setTimeout(() => {mainMenu.classList.add('is-active')}, 150)
+    mainV = true
+} else {
+    mainMenu.classList.remove('is-active')
+    overlay.classList.remove('is-active')
+    setTimeout(() => {mainMenu.classList.remove('is-enabled')}, 300)
+    mainV = false
+}
+}
+
+
 menu.onclick = function(){
     if (!visible) {
         links.classList.add('is-enabled')
@@ -12,7 +32,9 @@ menu.onclick = function(){
     } else {
         links.classList.remove('is-active')
         menu.classList.remove('is-active')
-        overlay.classList.remove('is-active')
+        if (!mainV) {
+          overlay.classList.remove('is-active')
+        }
         setTimeout(() => {links.classList.remove('is-enabled')}, 300)
         visible = false
     }
@@ -21,17 +43,39 @@ menu.onclick = function(){
 overlay.onclick = function(){
     links.classList.remove('is-active')
     setTimeout(() => {links.classList.remove('is-enabled')}, 300)
+    setTimeout(() => {mainMenu.classList.remove('is-enabled')}, 300)
     menu.classList.remove('is-active')
     overlay.classList.remove('is-active')
+    mainMenu.classList.remove('is-active')
+    mainMenutoggle.classList.remove('is-active')
+    mainV = false
     visible = false
 }
+
+document.querySelectorAll('.main-nav li').forEach(item => {
+  item.addEventListener('click', event => {
+    links.classList.remove('is-active')
+    setTimeout(() => {links.classList.remove('is-enabled')}, 300)
+    setTimeout(() => {mainMenu.classList.remove('is-enabled')}, 300)
+    menu.classList.remove('is-active')
+    overlay.classList.remove('is-active')
+    mainMenu.classList.remove('is-active')
+    mainMenutoggle.classList.remove('is-active')
+    mainV = false
+    visible = false
+  })
+})
 
 document.querySelectorAll('.mega-menu ul li').forEach(item => {
   item.addEventListener('click', event => {
     links.classList.remove('is-active')
     setTimeout(() => {links.classList.remove('is-enabled')}, 300)
+    setTimeout(() => {mainMenu.classList.remove('is-enabled')}, 300)
     menu.classList.remove('is-active')
     overlay.classList.remove('is-active')
+    mainMenu.classList.remove('is-active')
+    mainMenutoggle.classList.remove('is-active')
+    mainV = false
     visible = false
   })
 })

@@ -162,9 +162,26 @@ header .logo {
 
 @media (max-width:767px) {
     header .logo {
-        width: 100%;
-        height: 50px;
+        height: 72px;
     }
+}
+
+@media (min-width:769px) {
+    header .hamburger {
+        display: none;
+    }
+    .other-links-toggle i {
+        display: none;
+    }
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    background-color: var(--main-color) !important;
+    width: 30px;
+}
+
+.hamburger-inner{
+    right: 5px;
 }
 
 header .main-nav {
@@ -185,13 +202,39 @@ header .main-nav > li > a {
 
 @media (max-width:767px) {
     header .main-nav {
-        margin: auto;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        background-color: white;
+        opacity: 0;
+        top: calc(10px + 100%);
+        transition: 0.3s;
     }
     header .main-nav > li > a {
         padding: 10px;
-        font-size: 14px;
+        font-size: 18px;
         height: 40px;
         margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+        height: 50px;
+    }
+
+    header .main-nav.is-enabled {
+        display: flex;
+    }
+    header .main-nav.is-active {
+        top: calc( 100%);
+        opacity: 1;
+    }
+    .other-links-toggle i {
+        margin-left: 10px;
+        transition: 0.3s;
+    }
+    .other-links-toggle.is-active i {
+        transform: rotate(180deg);
     }
 }
 
@@ -227,7 +270,6 @@ header .mega-menu {
     opacity: 0;
     display: none;
     gap: 40px;
-    top: calc(50px + 100%);
     transition: 0.3s;
 }
 
@@ -246,7 +288,7 @@ header .mega-menu.is-enabled {
 header .mega-menu.is-active {
     opacity: 1;
     z-index: 100;
-    top: calc(100% - 1px);
+    top: 100%;
 }
 
 header .mega-menu .image img {
