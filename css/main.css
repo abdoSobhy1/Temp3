@@ -271,6 +271,7 @@ header .mega-menu {
     display: none;
     gap: 40px;
     transition: 0.3s;
+    top: calc(100% + 50px);
 }
 
 @media (max-width:767px) {
@@ -278,6 +279,7 @@ header .mega-menu {
         flex-direction: column;
         gap: 0;
         padding: 5px;
+        top: 100%;
     }
 }
 
@@ -289,6 +291,7 @@ header .mega-menu.is-active {
     opacity: 1;
     z-index: 100;
     top: 100%;
+    top: calc(100% - 1px);
 }
 
 header .mega-menu .image img {

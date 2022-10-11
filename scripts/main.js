@@ -17,6 +17,9 @@ mainMenutoggle.onclick = function(){
     mainMenu.classList.remove('is-active')
     overlay.classList.remove('is-active')
     setTimeout(() => {mainMenu.classList.remove('is-enabled')}, 300)
+    links.classList.remove('is-active')
+    setTimeout(() => {links.classList.remove('is-enabled')}, 300)
+    menu.classList.remove('is-active')
     mainV = false
 }
 }
@@ -52,17 +55,22 @@ overlay.onclick = function(){
     visible = false
 }
 
-document.querySelectorAll('.main-nav li').forEach(item => {
+document.querySelectorAll('.main-nav li a').forEach(item => {
   item.addEventListener('click', event => {
-    links.classList.remove('is-active')
-    setTimeout(() => {links.classList.remove('is-enabled')}, 300)
-    setTimeout(() => {mainMenu.classList.remove('is-enabled')}, 300)
-    menu.classList.remove('is-active')
-    overlay.classList.remove('is-active')
-    mainMenu.classList.remove('is-active')
-    mainMenutoggle.classList.remove('is-active')
-    mainV = false
-    visible = false
+    
+    if(item.classList.contains('other-links-toggle')){
+      return
+    }else {
+      links.classList.remove('is-active')
+      setTimeout(() => {links.classList.remove('is-enabled')}, 300)
+      setTimeout(() => {mainMenu.classList.remove('is-enabled')}, 300)
+      menu.classList.remove('is-active')
+      overlay.classList.remove('is-active')
+      mainMenu.classList.remove('is-active')
+      mainMenutoggle.classList.remove('is-active')
+      mainV = false
+      visible = false
+    }
   })
 })
 
