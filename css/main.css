@@ -209,7 +209,7 @@ header .logo {
     }
 }
 
-@media (min-width:769px) {
+@media (min-width:768px) {
     header .hamburger {
         display: none;
     }
@@ -412,14 +412,7 @@ header .mega-menu .links li a i {
     position: relative;
 }
 
-@media (min-width:769px) {
-    .landing {
-        margin-bottom: 70px;
-    }
-}
-
-.landing::before {
-    content: '';
+.landing-bg {
     position: absolute;
     left: 0;
     top: -40px;
@@ -432,6 +425,7 @@ header .mega-menu .links li a i {
 .landing .wave {
     position: absolute;
     top: calc(100% - 41px);
+    z-index: -1;
 }
 
 .landing .container {

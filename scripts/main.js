@@ -96,6 +96,19 @@ window.addEventListener('resize', function(eqSize){
   } else {
     document.querySelector('.list').style.maxHeight=300+'px';
   }
+  var landing = document.querySelector('.landing-bg');
+  var wavesHeight = document.querySelector('.wave').clientHeight
+  var mainLand = document.querySelector('.landing');
+  var waveHeight = wavesHeight - 20
+  if (window.innerWidth<1200){
+  document.querySelector('.wave').style.top= 'calc(100% - 5px - ' + waveHeight + 'px)';
+  landing.style.top= '-' + waveHeight +'px';
+  mainLand.style.marginBottom= null;
+  } else {
+    document.querySelector('.wave').style.top=null;
+    landing.style.top=null;
+    mainLand.style.marginBottom= waveHeight / 2 + 'px';
+  }
 });
 
 window.onload = function(eqSize){
@@ -105,6 +118,19 @@ window.onload = function(eqSize){
     document.querySelector('.list').style.maxHeight=rightHeight+66.4+'px';
   } else {
     document.querySelector('.list').style.maxHeight=200+'px';
+  }
+  var landing = document.querySelector('.landing-bg');
+  var wavesHeight = document.querySelector('.wave').clientHeight
+  var mainLand = document.querySelector('.landing');
+  var waveHeight = wavesHeight - 20
+  if (window.innerWidth<1200){
+  document.querySelector('.wave').style.top= 'calc(100% - 5px - ' + waveHeight + 'px)';
+  landing.style.top= '-' + waveHeight +'px';
+  mainLand.style.marginBottom= null;
+  } else {
+    document.querySelector('.wave').style.top=null;
+    landing.style.top=null;
+    mainLand.style.marginBottom= waveHeight / 2 + 'px';
   }
 }
 
