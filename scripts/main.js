@@ -5,7 +5,6 @@ const mainMenu = document.querySelector(".main-nav");
 const overlay = document.querySelector(".overlay");
 let visible = false;
 let mainV = false;
-
 mainMenutoggle.onclick = function () {
   mainMenutoggle.classList.toggle("is-active");
   if (!mainV) {
