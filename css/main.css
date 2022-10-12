@@ -220,6 +220,7 @@ header .main-nav > li > a {
         text-align: center;
         width: 100%;
         height: 50px;
+        font-weight: bold;
     }
 
     header .main-nav.is-enabled {
@@ -346,6 +347,11 @@ header .mega-menu .links li a {
     display: block;
     font-size: 18px;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+header .mega-menu .links li a:hover {
+    padding-left: 25px;
 }
 
 header .mega-menu .links li a i {
@@ -1691,13 +1697,14 @@ header .mega-menu .links li a i {
 .discount .content {
     text-align: center;
     padding: 0 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .discount .content h2 {
     font-size: 40px;
     letter-spacing: -2px;
     margin-bottom: 30px;
-    margin-top: 30px;
 }
 
 .discount .content p {
@@ -1745,7 +1752,6 @@ header .mega-menu .links li a i {
 .discount .image img {
     width: 300px;
     max-width: 100%;
-    margin-bottom: 30px;
 }
 
 .discount .form {
@@ -1800,4 +1806,155 @@ header .mega-menu .links li a i {
 
 .discount .form [type="submit"]:hover {
     background-color: var(--main-color-alt);
+}
+
+.footer {
+    background-color: #191919;
+    padding: 70px 0 0;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer .box h3 {
+    color: white;
+    font-size: 40px;
+    margin: 0 0 20px;
+}
+
+.footer .box .social {
+    display: flex;
+}
+
+.footer .box .social li {
+    margin-right: 10px;
+}
+
+.footer .box .social li a {
+    background-color: #313131;
+    color: #898989;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.footer .box .social li a:hover {
+    border-radius: 50%;
+}
+
+.footer .box .social .facebook:hover {
+    color: white;
+    background-color: #1877f2;
+}
+
+.footer .box .social .twitter:hover {
+    color: white;
+    background-color: #1da1f2;
+}
+
+.footer .box .social .youtube:hover {
+    color: white;
+    background-color: #ff0000;
+}
+
+.footer .box .social .behance:hover {
+    color: white;
+    background-color: #1769ff;
+}
+
+.footer .box .text {
+    margin-top: 15px;
+    line-height: 2;
+    color: #b9b9b9;
+}
+
+.footer .box .links li {
+    padding: 15px 0;
+    transition: 0.3s;
+}
+
+.footer .box .links li:not(:last-child) {
+    border-bottom: 1px solid #444;
+}
+
+.footer .box .links li:hover {
+    padding-left: 10px;
+}
+
+.footer .box .links li a {
+    color: #b9b9b9;
+    transition: 0.3s;
+}
+
+.footer .box .links li:hover a {
+    color: white;
+}
+
+.footer .box .links li a::before {
+    content: '\f101';
+    font-family: 'font awesome 6 free';
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--main-color);
+}
+
+.footer .box .line {
+    display: flex;
+    align-items: center;
+    color: #b9b9b9;
+    margin-bottom: 30px;
+}
+
+.footer .box .line i {
+    color: var(--main-color);
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.footer .box .line .info {
+    line-height: 1.8;
+    flex: 1;
+}
+
+.footer .box .line .info span {
+    display: block;
+}
+
+.footer .footer-gallery img {
+    width: 78px;
+    border: 3px solid white
+}
+
+@media (max-width:768px) {
+    .footer .box {
+        text-align: center;
+    }
+    .footer .box .social {
+        justify-content: center;
+    }
+    .footer .box .line {
+        flex-direction: column;
+    }
+    .footer .box .line i {
+        margin-bottom: 10px;
+    }
+}
+
+.footer .copyrights {
+    padding: 25px 0;
+    text-align: center;
+    color: white;
+    margin: 50px 0 0;
+}
+
+.footer .copyrights a {
+    color: var(--main-color);
 }
