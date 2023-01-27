@@ -231,3 +231,9 @@ function startCount(el) {
     }
   }, 2000 / goal);
 }
+let blankLinks = document.querySelectorAll('[href="#"]');
+blankLinks.forEach((blankLink) => {
+  blankLink.addEventListener("click", (e) => {
+    e.preventDefault();
+  });
+});
